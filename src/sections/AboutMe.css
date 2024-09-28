@@ -1,0 +1,41 @@
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ECF0F1; /* Light Grey */
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2C3E50; /* Primary Color */
+  }
+  
+  .bio {
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .bio h2 {
+    color: #2C3E50; /* Primary Color */
+  }
+  
+  .bio p {
+    color: #34495E; /* Dark Grey */
+    line-height: 1.6;
+  }
+  
+  @media (min-width: 768px) {
+    .about-me {
+      flex-direction: row;
+      text-align: left;
+    }
+  
+    .bio {
+      margin-left: 20px;
+    }
+  }
