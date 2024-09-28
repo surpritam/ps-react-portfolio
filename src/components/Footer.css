@@ -1,0 +1,22 @@
+.footer {
+    padding: 20px;
+    background-color: #2C3E50; /* Primary Color */
+    text-align: center;
+    color: #ECF0F1; /* Accent Color */
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    color: #ECF0F1; /* Accent Color */
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #E74C3C; /* Secondary Color */
+  }
