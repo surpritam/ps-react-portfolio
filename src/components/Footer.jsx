@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-primary text-accent p-md text-center">
       <div className="flex justify-center gap-sm mb-xs">
         <a
-          href="https://github.com/username"
+          href="https://github.com/surpritam"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -15,7 +15,7 @@ const Footer = () => {
           <FaGithub size={24} />
         </a>
         <a
-          href="https://linkedin.com/in/username"
+          href="https://linkedin.com/in/pritam-sur"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -24,7 +24,7 @@ const Footer = () => {
           <FaLinkedin size={24} />
         </a>
         <a
-          href="https://twitter.com/username"
+          href="https://x.com/SurPritam"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
@@ -33,7 +33,7 @@ const Footer = () => {
           <FaTwitter size={24} />
         </a>
       </div>
-      <p className="text-sm">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+      <p className="text-sm">&copy; {new Date().getFullYear()} Pritam Sur. All rights reserved.</p>
     </footer>
   );
 };

@@ -6,22 +6,22 @@ import project3Img from '../assets/images/project3.png';
 
 const projects = [
   {
-    title: 'Project One',
+    title: 'Stock Info News feed',
     image: project1Img,
-    deployedLink: 'https://deployed-app1.com',
-    githubLink: 'https://github.com/username/project1',
+    deployedLink: 'https://surpritam.github.io/stock-up/',
+    githubLink: 'https://surpritam.github.io/stock-up/',
   },
   {
-    title: 'Project Two',
+    title: 'Travel Planning App',
     image: project2Img,
-    deployedLink: 'https://deployed-app2.com',
-    githubLink: 'https://github.com/username/project2',
+    deployedLink: 'https://fourtravel.onrender.com/',
+    githubLink: 'https://github.com/lukemaines/4Travel/tree/main',
   },
   {
-    title: 'Project Three',
+    title: 'Donate Your Way',
     image: project3Img,
-    deployedLink: 'https://deployed-app1.com',
-    githubLink: 'https://github.com/username/project1',
+    deployedLink: 'https://donateyourway.onrender.com/',
+    githubLink: 'https://github.com/jerrietkuo/DonateYourWay/tree/main',
   }
 ];
 
