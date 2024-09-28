@@ -6,7 +6,7 @@ import AboutMe from './sections/AboutMe';
 import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
 import Resume from './sections/Resume';
-import './styles/App.css';
+import './App.css';
 
 const App = () => {
   return (
