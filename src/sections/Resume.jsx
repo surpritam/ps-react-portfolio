@@ -1,6 +1,5 @@
 import React from 'react';
-import './Resume.css';
-import resume from '../assets/resume.pdf'; // Ensure resume.pdf is in the src/assets/ directory
+import resume from '../assets/resume.pdf';
 
 const proficiencies = [
   'JavaScript',
@@ -11,22 +10,27 @@ const proficiencies = [
   'HTML5',
   'CSS3',
   'Git',
-  'TypeScript',
-  'Redux',
-  // Add more proficiencies as needed
 ];
 
 const Resume = () => {
   return (
-    <section className="resume">
-      <h2>Resume</h2>
-      <a href={resume} download className="download-resume">
+    <section className="bg-background p-lg text-center">
+      <a
+        href={resume}
+        download
+        className="inline-block bg-secondary text-accent font-bold py-2 px-6 rounded hover:bg-red-700 transition-colors duration-300 mb-md"
+      >
         Download Resume
       </a>
-      <h3>Proficiencies</h3>
-      <ul className="proficiencies">
+      <h3 className="text-xl font-semibold text-primary mb-sm">Proficiencies</h3>
+      <ul className="flex flex-wrap justify-center gap-sm">
         {proficiencies.map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <li
+            key={index}
+            className="bg-primary text-accent px-3 py-1 rounded-full text-sm font-semibold"
+          >
+            {skill}
+          </li>
         ))}
       </ul>
     </section>

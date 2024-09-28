@@ -6,14 +6,13 @@ import AboutMe from './sections/AboutMe';
 import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
 import Resume from './sections/Resume';
-import './App.css';
 
 const App = () => {
   return (
     <Router>
-      <div className="app">
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <main>
+        <main className="flex-grow container mx-auto px-sm">
           <Routes>
             <Route path="/" element={<AboutMe />} />
             <Route path="/portfolio" element={<Portfolio />} />

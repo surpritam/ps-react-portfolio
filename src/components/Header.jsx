@@ -1,11 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
-import './Header.css'; // Import corresponding CSS
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1 className="developer-name">Pritam Sur</h1>
+    <header className="bg-primary text-accent p-md flex justify-between items-center">
+      <h1 className="text-2xl font-bold">Pritam Sur</h1>
       <Navigation />
     </header>
   );

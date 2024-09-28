@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import './Contact.css';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const validateEmail = (email) => {
-    // Simple email regex
-    const re = /\S+@\S+\.\S+/;
-    return re.test(email);
-  };
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
@@ -31,12 +26,10 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-    // Optionally, validate on change
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Final validation before submission
     let newErrors = {};
     Object.keys(form).forEach((field) => {
       if (!form[field].trim()) {
@@ -47,12 +40,9 @@ const Contact = () => {
     });
 
     if (Object.keys(newErrors).length === 0) {
-      // Handle form submission (e.g., send email, API call)
       console.log('Form submitted:', form);
       setIsSubmitted(true);
-      // Reset form
       setForm({ name: '', email: '', message: '' });
-      // Hide the success message after a delay
       setTimeout(() => setIsSubmitted(false), 5000);
     } else {
       setErrors(newErrors);
@@ -60,13 +50,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact">
-      <h2>Contact</h2>
-      {isSubmitted && <p className="success">Your message has been sent successfully!</p>}
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="form-group">
-          <label htmlFor="name">
-            Name<span>*</span>
+    <section className="bg-accent p-lg flex flex-col items-center">
+      <h2 className="text-2xl font-bold text-primary mb-md">Contact</h2>
+      {isSubmitted && <p className="text-green-500 mb-sm">Your message has been sent successfully!</p>}
+      <form className="w-full max-w-lg" onSubmit={handleSubmit} noValidate>
+        <div className="mb-sm">
+          <label htmlFor="name" className="block text-primary font-semibold mb-xs">
+            Name<span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -75,14 +65,17 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
             onBlur={handleBlur}
+            className={`w-full p-sm border ${
+              errors.name ? 'border-red-500' : 'border-gray-300'
+            } rounded focus:outline-none focus:ring-2 focus:ring-primary`}
             required
           />
-          {errors.name && <span className="error">{errors.name}</span>}
+          {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="email">
-            Email<span>*</span>
+        <div className="mb-sm">
+          <label htmlFor="email" className="block text-primary font-semibold mb-xs">
+            Email<span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -91,14 +84,17 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
             onBlur={handleBlur}
+            className={`w-full p-sm border ${
+              errors.email ? 'border-red-500' : 'border-gray-300'
+            } rounded focus:outline-none focus:ring-2 focus:ring-primary`}
             required
           />
-          {errors.email && <span className="error">{errors.email}</span>}
+          {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="message">
-            Message<span>*</span>
+        <div className="mb-sm">
+          <label htmlFor="message" className="block text-primary font-semibold mb-xs">
+            Message<span className="text-red-500">*</span>
           </label>
           <textarea
             id="message"
@@ -106,12 +102,18 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             onBlur={handleBlur}
+            className={`w-full p-sm border ${
+              errors.message ? 'border-red-500' : 'border-gray-300'
+            } rounded focus:outline-none focus:ring-2 focus:ring-primary`}
             required
           ></textarea>
-          {errors.message && <span className="error">{errors.message}</span>}
+          {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
         </div>
 
-        <button type="submit" className="submit-button">
+        <button
+          type="submit"
+          className="bg-secondary text-accent font-bold py-2 px-4 rounded hover:bg-red-700 transition-colors duration-300"
+        >
           Send Message
         </button>
       </form>

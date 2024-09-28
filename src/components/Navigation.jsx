@@ -1,16 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navigation.css';
 
 const Navigation = () => {
   return (
     <nav>
-      <ul className="navigation">
+      <ul className="flex gap-sm">
         <li>
           <NavLink
             to="/"
             end
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            className={({ isActive }) =>
+              isActive
+                ? 'border-b-2 border-secondary text-accent font-semibold'
+                : 'text-accent hover:border-b-2 hover:border-secondary'
+            }
           >
             About Me
           </NavLink>
@@ -18,7 +21,11 @@ const Navigation = () => {
         <li>
           <NavLink
             to="/portfolio"
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            className={({ isActive }) =>
+              isActive
+                ? 'border-b-2 border-secondary text-accent font-semibold'
+                : 'text-accent hover:border-b-2 hover:border-secondary'
+            }
           >
             Portfolio
           </NavLink>
@@ -26,7 +33,11 @@ const Navigation = () => {
         <li>
           <NavLink
             to="/contact"
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            className={({ isActive }) =>
+              isActive
+                ? 'border-b-2 border-secondary text-accent font-semibold'
+                : 'text-accent hover:border-b-2 hover:border-secondary'
+            }
           >
             Contact
           </NavLink>
@@ -34,7 +45,11 @@ const Navigation = () => {
         <li>
           <NavLink
             to="/resume"
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            className={({ isActive }) =>
+              isActive
+                ? 'border-b-2 border-secondary text-accent font-semibold'
+                : 'text-accent hover:border-b-2 hover:border-secondary'
+            }
           >
             Resume
           </NavLink>
